@@ -4,4 +4,5 @@ dist
 
 .env
 
-uploads/
+uploads/products/*
+!uploads/products/.gitkeep
