@@ -24,6 +24,14 @@ if (env.nodeEnv === 'development') {
 // Serve uploaded product images
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+app.get('/', (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Mini ERP API is up and running 🚀',
+    docs: '/health for a lightweight health check, /api/v1/* for the actual API routes',
+  });
+});
+
 app.get('/health', (_req, res) => {
   res.status(200).json({ success: true, message: 'Mini ERP API is running' });
 });
